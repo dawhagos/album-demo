@@ -29,7 +29,7 @@ public class AppController {
         return "signup_form";
     }
 
-    @PostMapping("/register_success")
+    @PostMapping("/process_register")
     public String processRegister(User user) {
         BCryptPasswordEncoder passwordEncoder = new BCryptPasswordEncoder();
         String encodedPassword = passwordEncoder.encode(user.getPassword());

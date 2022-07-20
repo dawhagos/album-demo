@@ -3,9 +3,6 @@ package com.hagos.albums.model;
 import lombok.Data;
 
 import javax.persistence.*;
-import java.util.ArrayList;
-import java.util.Collection;
-import java.util.List;
 
 @Entity
 @Table(name="users")
@@ -18,13 +15,13 @@ public class User {
     private Long id;
 
     @Column(nullable = false, unique = true, length = 45)
-    private String userName;
+    private String username;
     @Column(nullable = false, length = 64)
     private String password;
-    private boolean enabled;
+//    private boolean enabled;
 
-    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-    @JoinColumn(name = "user_id")
-    private List<Album> albums;
+//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+//    @JoinColumn(name = "user_id")
+//    private List<Album> albums;
 
 }

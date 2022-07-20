@@ -12,13 +12,13 @@
     <div>
         <h1>User Registration - Sign Up</h1>
     </div>
-    <form th:action="@{/register_success}" th:object="${user}"
+    <form th:action="@{/process_register}" th:object="${user}"
           method="post" style="max-width: 600px; margin: 0 auto;">
         <div class="m-3">
             <div class="form-group row">
-                <label class="col-4 col-form-label">E-mail: </label>
+                <label class="col-4 col-form-label">Username: </label>
                 <div class="col-8">
-                    <input type="userName" th:field="*{userName}" class="form-control" required />
+                    <input type="text" th:field="*{username}" class="form-control" required />
                 </div>
             </div>
 
