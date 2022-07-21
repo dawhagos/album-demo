@@ -51,10 +51,11 @@ public class SecurityConfig extends WebSecurityConfigurerAdapter {
                 .and()
                 .formLogin()
                 .usernameParameter("username")
-                .defaultSuccessUrl("/users")
+                .defaultSuccessUrl("/swagger-ui/index.html")
                 .permitAll()
                 .and()
                 .logout().logoutSuccessUrl("/").permitAll();
+        http.csrf().disable();
     }
 
 }
