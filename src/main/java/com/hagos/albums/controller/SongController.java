@@ -24,8 +24,8 @@ public class SongController {
     }
 
     @GetMapping("/album/{albumId}")
-    public List<Song> fetchSongsByAlbum(@PathVariable Long albumId) {
-        return songService.findByAlbum(albumId);
+    public ResponseEntity<?> fetchSongsByAlbumId(@PathVariable Long albumId) {
+        return ResponseEntity.ok(songService.findByAlbum(albumId));
     }
 
 }

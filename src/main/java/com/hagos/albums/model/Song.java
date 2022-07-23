@@ -1,7 +1,6 @@
 package com.hagos.albums.model;
 
 import com.fasterxml.jackson.annotation.JsonBackReference;
-import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 import org.hibernate.annotations.GenericGenerator;
 
@@ -20,7 +19,7 @@ public class Song {
 
     private String title;
 
-    @Column(name = "track_number", unique = true)
+    @Column(name = "track_number")
     private String trackNumber;
 
     @Min(1)

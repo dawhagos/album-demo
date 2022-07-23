@@ -22,6 +22,16 @@ public class AlbumController {
         return ResponseEntity.ok(albumService.findAlbums());
     }
 
+    @GetMapping("/albumId/{albumId}")
+    public ResponseEntity<?> fetchAlbumsById(@PathVariable Long albumId) {
+        return ResponseEntity.ok(albumService.findById(albumId));
+    }
+
+    @GetMapping("/userId/{userId}")
+    public ResponseEntity<?> fetchAlbumsByUserId(@PathVariable Long userId) {
+        return ResponseEntity.ok(albumService.findByUserId(userId));
+    }
+
     @PostMapping("/publish")
     public ResponseEntity<?> publishAlbum(@RequestBody Album album) {
         return ResponseEntity.ok(albumService.createAlbum(album));
