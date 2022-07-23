@@ -1,8 +1,7 @@
-package com.hagos.albums.security;
+package com.hagos.albums.service;
 
 import com.hagos.albums.model.Album;
 import com.hagos.albums.repository.AlbumRepository;
-import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 
 import java.util.List;
@@ -24,6 +23,6 @@ public class AlbumServiceImpl implements AlbumService {
     @Override
     public String createAlbum(Album album) {
         albumRepository.save(album);
-        return "Album created successfully";
+        return "Album created successfully!";
     }
 }

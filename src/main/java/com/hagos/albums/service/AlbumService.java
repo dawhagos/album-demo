@@ -1,4 +1,4 @@
-package com.hagos.albums.security;
+package com.hagos.albums.service;
 
 import com.hagos.albums.model.Album;
 

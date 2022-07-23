@@ -1,5 +1,6 @@
 package com.hagos.albums.model;
 
+import com.fasterxml.jackson.annotation.JsonManagedReference;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -20,9 +21,13 @@ public class User {
     @Column(nullable = false, length = 64)
     private String password;
 
-//    @OneToMany(fetch = FetchType.LAZY, cascade = CascadeType.ALL)
-//    @JoinColumn(name = "user_id")
-//    private List<Album> albums;
+    @JsonManagedReference(value = "albumsToUser")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Album> albums;
+
+    @JsonManagedReference(value = "songsToUser")
+    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
+    private List<Song> songs;
 
 //    @OneToMany(mappedBy = "user", fetch = FetchType.LAZY, cascade = CascadeType.ALL)
 //    private Album album;
